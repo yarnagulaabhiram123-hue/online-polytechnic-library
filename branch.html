@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Branch Selection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      color: white;
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: block;
+      width: 200px;
+      margin: 15px 0;
+      padding: 15px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      background: #2575fc;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background: #6a11cb;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    .btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>Choose Your Branch</h1>
+  
+  <a href="cme.html" class="btn">CME</a>
+  <a href="ece.html" class="btn">ECE</a>
+  <a href="eee.html" class="btn">EEE</a>
+  <a href="aiml.html" class="btn">AIML</a>
+  <a href="ccn.html" class="btn">CCN</a>
+  <a href="civil.html" class="btn">CIVIL</a>
+  <a href="mech.html" class="btn">MECH</a>
+</body>
+</html>
