@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #43e97b, #38f9d7);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { opacity: 0.9; }
+    #error { color: red; text-align: center; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <form id="signupForm">
+    <h2>Signup</h2>
+
+    <input type="text" id="signupName" placeholder="Name" required>
+    <input type="email" id="signupEmail" placeholder="Email" required>
+    <input type="password" id="signupPassword" placeholder="Password" required>
+    <input type="tel" id="signupPhone" placeholder="Phone Number " required pattern="[0-9]{10}">
+    <input type="text" id="signupPin" placeholder="PIN " required>
+
+    <!-- Branch Dropdown -->
+    <select id="signupBranch" required>
+      <option value="">-- Select Branch --</option>
+      <option value="CSE">CSE</option>
+      <option value="ECE">ECE</option>
+      <option value="EEE">EEE</option>
+      <option value="MECH">MECH</option>
+      <option value="AIML">AIML</option>
+      <option value="CIVIL">CIVIL</option>
+      <option value="CCN">CCN</option>
+
+    </select>
+
+    <button type="submit">Submit</button>
+    <p id="error"></p>
+  </form>
+
+  <!-- Firebase JS -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCEiuOj724mU5FxpwDM2ZYdcRlp3nHqkVA",
+      authDomain: "online-polytechnic-library.firebaseapp.com",
+      projectId: "online-polytechnic-library",
+      storageBucket: "online-polytechnic-library.firebasestorage.app",
+      messagingSenderId: "127539395582",
+      appId: "1:127539395582:web:31612cc3f67ab1ee71deaf"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // 🔹 Redirect if user is already signed in
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, redirect to login.html
+        window.location.href = "login.html";
+      }
+    });
+
+    // Signup form
+    document.getElementById("signupForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("signupName").value.trim();
+      const email = document.getElementById("signupEmail").value.trim();
+      const password = document.getElementById("signupPassword").value;
+      const phone = document.getElementById("signupPhone").value.trim();
+      const pin = document.getElementById("signupPin").value.trim();
+      const branch = document.getElementById("signupBranch").value;
+      const errorEl = document.getElementById("error");
+
+      try {
+        // Create user in Firebase Authentication
+        const userCred = await createUserWithEmailAndPassword(auth, email, password);
+
+        // Save additional user info in Firestore
+        await setDoc(doc(db, "users", userCred.user.uid), {
+          name, email, phone, pin, branch
+        });
+
+        alert("Signup successful! Redirecting to login...");
+        window.location.href = "login.html";
+
+      } catch (err) {
+        console.error(err);
+        if (err.code === "auth/email-already-in-use") {
+          // User already exists, redirect to login
+          window.location.href = "login.html";
+        } else {
+          errorEl.textContent = err.message;
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

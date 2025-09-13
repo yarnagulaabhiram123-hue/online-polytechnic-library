@@ -1,141 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Signup Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Polytechnic College</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: white;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    form {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      width: 300px;
-    }
-    h2 {
+      min-height: 100vh;
       text-align: center;
-      color: #333;
+    }
+
+    h1 {
+      font-size: 3rem;
       margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-sizing: border-box;
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 50px;
+      line-height: 1.6;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
+
+    .btn-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     button {
-      width: 100%;
-      padding: 12px;
-      background: linear-gradient(to right, #43e97b, #38f9d7);
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
+      padding: 15px 40px;
+      font-size: 1.2rem;
       font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: white;
+      transition: 0.3s;
     }
-    button:hover { opacity: 0.9; }
-    #error { color: red; text-align: center; margin-top: 10px; }
+
+    #signupBtn { background: linear-gradient(to right, #43e97b, #38f9d7); }
+    #loginBtn { background: linear-gradient(to right, #f953c6, #b91d73); }
+
+    button:hover { opacity: 0.9; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+
   </style>
 </head>
 <body>
 
-  <form id="signupForm">
-    <h2>Signup</h2>
+  <h1>Welcome to Online Polytechnic College</h1>
+  <p>
+    Your one-stop digital library for all polytechnic courses. Access all lecture notes, reference materials, and study resources anytime, anywhere. 
+    Designed for polytechnic students to make learning easier, faster, and fully digital.
+  </p>
 
-    <input type="text" id="signupName" placeholder="Name" required>
-    <input type="email" id="signupEmail" placeholder="Email" required>
-    <input type="password" id="signupPassword" placeholder="Password" required>
-    <input type="tel" id="signupPhone" placeholder="Phone Number " required pattern="[0-9]{10}">
-    <input type="text" id="signupPin" placeholder="PIN " required>
+  <div class="btn-container">
+    <button id="signupBtn">Signup</button>
+    <button id="loginBtn">Login</button>
+  </div>
 
-    <!-- Branch Dropdown -->
-    <select id="signupBranch" required>
-      <option value="">-- Select Branch --</option>
-      <option value="CSE">CSE</option>
-      <option value="ECE">ECE</option>
-      <option value="EEE">EEE</option>
-      <option value="MECH">MECH</option>
-      <option value="AIML">AIML</option>
-      <option value="CIVIL">CIVIL</option>
-      <option value="CCN">CCN</option>
+  <footer>
+    &copy; 2025 Online Polytechnic College. All rights reserved.
+  </footer>
 
-    </select>
-
-    <button type="submit">Submit</button>
-    <p id="error"></p>
-  </form>
-
-  <!-- Firebase JS -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyCEiuOj724mU5FxpwDM2ZYdcRlp3nHqkVA",
-      authDomain: "online-polytechnic-library.firebaseapp.com",
-      projectId: "online-polytechnic-library",
-      storageBucket: "online-polytechnic-library.firebasestorage.app",
-      messagingSenderId: "127539395582",
-      appId: "1:127539395582:web:31612cc3f67ab1ee71deaf"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-
-    // 🔹 Redirect if user is already signed in
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in, redirect to login.html
-        window.location.href = "login.html";
-      }
+  <script>
+    document.getElementById("signupBtn").addEventListener("click", () => {
+      window.location.href = "index.html"; // Signup form
     });
 
-    // Signup form
-    document.getElementById("signupForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const name = document.getElementById("signupName").value.trim();
-      const email = document.getElementById("signupEmail").value.trim();
-      const password = document.getElementById("signupPassword").value;
-      const phone = document.getElementById("signupPhone").value.trim();
-      const pin = document.getElementById("signupPin").value.trim();
-      const branch = document.getElementById("signupBranch").value;
-      const errorEl = document.getElementById("error");
-
-      try {
-        // Create user in Firebase Authentication
-        const userCred = await createUserWithEmailAndPassword(auth, email, password);
-
-        // Save additional user info in Firestore
-        await setDoc(doc(db, "users", userCred.user.uid), {
-          name, email, phone, pin, branch
-        });
-
-        alert("Signup successful! Redirecting to login...");
-        window.location.href = "login.html";
-
-      } catch (err) {
-        console.error(err);
-        if (err.code === "auth/email-already-in-use") {
-          // User already exists, redirect to login
-          window.location.href = "login.html";
-        } else {
-          errorEl.textContent = err.message;
-        }
-      }
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      window.location.href = "login.html"; // Login page
     });
   </script>
 
