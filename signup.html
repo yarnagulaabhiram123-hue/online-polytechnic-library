@@ -49,11 +49,11 @@
     #error { color: red; text-align: center; margin-top: 10px; }
     .login-link {
       margin-top: 15px;
-      display: block;
       font-size: 0.9rem;
-      color: #333;
+    }
+    .login-link a {
+      color: #38f9d7;
       text-decoration: underline;
-      cursor: pointer;
     }
   </style>
 </head>
@@ -81,7 +81,9 @@
     <p id="error"></p>
 
     <!-- Login link at the bottom -->
-    <span class="login-link" onclick="goToLogin()">Already have an account? Login</span>
+    <p class="login-link">
+      Already have an account? <a href="login.html">Login</a>
+    </p>
   </form>
 
   <!-- Firebase JS -->
@@ -131,11 +133,6 @@
         errorEl.textContent = err.message;
       }
     });
-
-    // Function for login link
-    function goToLogin() {
-      window.location.href = "login.html"; // Redirect to login page
-    }
   </script>
 
 </body>
