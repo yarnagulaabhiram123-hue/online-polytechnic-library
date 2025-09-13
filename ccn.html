@@ -1,13 +1,104 @@
 <html>
 <head>
 <style>
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: aliceblue;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Table styling */
 table, th, td {
-  border: 1px solid black;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Table header background */
+th {
+    background-color: #222;
+    color: aliceblue;
+}
+
+/* Links styling */
+a {
+    color: #ffd700;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Headings */
+h1 {
+    background-color: black;
+    color: aliceblue;
+    padding: 10px;
+}
+
+/* Div containers for info */
+div.info, div.additional {
+    background-color: black;
+    color: aliceblue;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+/* Marquee styling */
+marquee {
+    background-color: black;
+    color: red;
+    padding: 5px;
+    font-weight: bold;
+}
+
+/* Scrollable table container */
+.table-container {
+    max-width: 100%;      /* restrict width to screen */
+    max-height: 400px;    /* adjust height as needed */
+    overflow-x: auto;     /* enable horizontal scroll */
+    overflow-y: auto;     /* enable vertical scroll */
+    border: 1px solid #444; /* optional border for container */
+    margin: 20px;          /* spacing around table */
 }
 </style>
 </head>
 <body>
-<center><h1>Select Your Semester</h1></center>
+<center><h1>Select Your required notes</h1></center>
+<div class="info">
+<hr>
+<p>CME (Computer Communication Engineering) is a branch of diploma/engineering studies that focuses on:</p>
+<p><b>Core areas of computing:</b> Computer programming (C, C++, Python, Java), Data Structures, Operating Systems, DBMS, Networking.</p>
+<p><b>Hardware basics:</b> Digital electronics, microprocessors, computer organization.</p>
+<p><b>Practical skills:</b> Software development, web development, database handling, troubleshooting, and basic networking.</p>
+<p><b>Projects & labs:</b> Students build applications, small software systems, and sometimes hardware–software integrated projects.</p>
+<p><b>Career paths:</b> Software developer, web developer, system admin, network technician, IT support, and with higher studies — software engineer, data analyst, AI/ML engineer, etc.</p>
+<p>In diploma, CME = Computer communication Engineering branch (sometimes called CSE in degree level). It’s one of the most in-demand fields because of IT industry growth.</p>
+<hr>
+</div>
+<div style="background-color:black;color:aliceblue;">
+<p>Foundation for IT Industry – CME provides the basic knowledge of programming, databases, and networking, which are the backbone of the IT sector.</p>
+<p>Practical Skill Development – Diploma courses focus on labs and projects, helping students gain hands-on experience in coding, debugging, and using computer tools.</p>
+<p>Early Career Opportunities – Even after a diploma, students can work as programmers, technicians, IT support staff, or web developers.</p>
+<p>Pathway to Higher Studies – CCN diploma graduates can enter B.Tech/B.E. through lateral entry (ECET) and move towards advanced careers in software, AI, or cybersecurity.</p>
+<p>High Demand – With the digital world growing, every sector (education, healthcare, banking, e-commerce) needs computer engineers for automation and software development</p>
+<p>Problem-Solving Mindset – Students learn logic building, algorithmic thinking, and troubleshooting, which are essential for real-world technology challenges.</p>
+<p>Computer Science and Engineering is one of the most popular and important fields of technical education in the modern world. It is a branch of study that combines the principles of computer science with engineering applications. Students who choose this course learn about both hardware and software systems, programming languages, algorithms, operating systems, database management, networking, and emerging technologies. The importance of CSE has grown rapidly because technology has become a part of almost every aspect of life including education, communication, business, healthcare, government, and entertainment.</p>
+<p>A diploma in CCn or a degree in CCN builds a strong foundation in computing. During the early semesters students are introduced to subjects like programming in C language, data structures, computer organization, digital logic, and operating systems. As they move forward they learn advanced topics such as database management systems, software engineering, computer networks, web technologies, artificial intelligence, machine learning, and cloud computing. Along with theoretical concepts students are given practical laboratory sessions to apply their knowledge through coding, experiments, and projects. This balance between theory and practice ensures that students not only understand concepts but can also implement them in real life applications.</p>
+<p>The role of CCN in the present digital era is very significant. Almost every organization depends on computers and software systems to function efficiently. Banks use secure software for financial transactions, hospitals use computer based systems for patient management, schools use digital platforms for teaching, and businesses use data analytics to make decisions. This shows how deeply computer science and engineering is connected with daily life. Because of this demand, career opportunities for CSE students are very wide. They can work as software developers, system analysts, network administrators, database managers, cybersecurity experts, data scientists, or web developers. The IT industry in India as well as across the world continues to grow and create new opportunities every year.</p>
+<p>One of the strengths of CCN is its flexibility. A student who completes a diploma in CCN can directly join the workforce as a technician or junior programmer, or can pursue higher studies by entering BTech or BE through lateral entry examinations. After completing a degree, they can further go for postgraduate studies like MTech or specialized certifications in fields such as artificial intelligence, cloud computing, or cybersecurity. This progressive learning path makes CSE suitable for students who want both immediate employment and long term academic growth.</p>
+<p>The importance of practical learning in CCN cannot be ignored. A student who practices coding daily, works on small projects, and participates in internships gains more confidence and skills than one who only studies theory. Project based learning also helps in developing teamwork, problem solving, and communication skills which are essential in the industry. For example building a small website, creating a mobile application, or designing a database for a shop are simple projects that teach valuable lessons about real world challenges.</p>
+<p>Apart from technical knowledge, CCN also develops logical thinking and creativity. Writing algorithms to solve problems requires clear reasoning and innovative ideas. Debugging programs trains the mind to look carefully for mistakes and to fix them patiently. These abilities are not only useful in engineering but also in everyday decision making. That is why many experts say that learning computer science builds a problem solving mindset which is valuable in any profession.</p>
+<p>With the growth of artificial intelligence, data science, and automation the future scope of CCN is very bright. New technologies like self driving cars, smart healthcare devices, digital payments, and online learning platforms are all based on computer science and engineering. Governments and private companies invest heavily in research and development in this field. For students this means continuous demand for skilled professionals.</p>
+<p>In conclusion Computer Science and Engineering is a vital branch of education that combines technical knowledge with practical skills. It opens doors to employment in various sectors and provides opportunities for higher studies and research. The demand for computer engineers will continue to rise as the world becomes more digital. A diploma or degree in CSE not only gives career opportunities but also develops logical thinking, problem solving ability, and creativity. Choosing CSE as a field of study is a wise decision for students who want to build a strong future in the world of technology.</p>
+</div>
+<div class="table-container">
 <table style="width:100%">
   <tr>
     <th>Semester1</th>
@@ -16,40 +107,54 @@ table, th, td {
     <th>Semester5</th>
   </tr>
   <tr>
-    <td><a href="https://www.academia.edu/34461488/ENGLISH_FOR_POLYTECHNICS_DIPLOMA_1ST_YEAR">English CM-101</a></td>
-    <td><a href="https://www.scribd.com/document/752773156/Mathematics-Polytechnic-Engineering-mathematics-Semester-2-Text-Books">Maths(M2) CM-301</a></td>
-    <td><a href="https://www.vssut.ac.in/lecture_notes/lecture1428551142.pdf">SE CM-401</a></td>
-    <td><a href="https://www.scribd.com/document/789284698/b59dd768-dc68-4839-9440-e56e56bb4bec-1">IME CM-501</a></td>
+    <td><a href="https://www.academia.edu/34461488/ENGLISH_FOR_POLYTECHNICS_DIPLOMA_1ST_YEAR">English CN-101</a></td>
+    <td><a href="https://www.scribd.com/document/752773156/Mathematics-Polytechnic-Engineering-mathematics-Semester-2-Text-Books">Maths(M2) CN-301</a></td>
+    <td><a href="https://jcboseust.ac.in/assets/computers/images/studymaterial/networkmanagement1.pdf">NM TCP/IP CN-401</a></td>
+    <td><a href="https://www.scribd.com/document/789284698/b59dd768-dc68-4839-9440-e56e56bb4bec-1">IME CN-501</a></td>
   </tr>
   <tr>
-    <td><a href="https://www.slideshare.net/slideshow/m1-complete-notes/96392954">Maths CM-102</a></td>
-    <td><a href="https://www.researchgate.net/profile/Dk-Kaushik/publication/264005171_Digital_Electronics/links/53fca84a0cf2364ccc04b6dd/Digital-Electronics.pdf">DE CM-302</a></td>
-    <td><a href="https://www.w3schools.com/html/default.asp">WT CM-402</a></td>
-    <td><a href="https://eecs.csuohio.edu/~sschung/cis612/CIS612_Lecture1_IntroBigDataAnalyricsCloud.pdf">BDCC CM-502</a></td>
+    <td><a href="https://www.slideshare.net/slideshow/m1-complete-notes/96392954">Maths CN-102</a></td>
+    <td><a href="https://www.scribd.com/document/750352891/Python-Programming-Sem-5"> CN PYTHON-302</a></td>
+    <td><a href="https://www.w3schools.com/html/default.asp">WT CN-402</a></td>
+    <td><a href="https://www.jbiet.edu.in/pdffls/IT-coursematerial/WNMC.pdf">WN CN-502</a></td>
   </tr>
   <tr>
-    <td><a href="https://www.slideshare.net/slideshow/first-semester-diploma-engineering-physics-i/55070671">Physics CM-103</a></td>
-    <td><a href="https://sriindu.ac.in/wp-content/uploads/2023/10/R20CSE2202-OPERATING-SYSTEMS.pdf">OS CM-303</a></td>
-    <td><a href="https://www.scribd.com/document/861220940/Coa-Notes-4th-Semm-Computer-Organization-and-Architecture">COMP CM-403</a></td>
-    <td><a href="https://kahedu.edu.in/naac/C-3/Additional%20documents/E-content/992.pdf">AP CM-503</a></td>
+    <td><a href="https://www.slideshare.net/slideshow/first-semester-diploma-engineering-physics-i/55070671">Physics CN-103</a></td>
+    <td><a href="https://sriindu.ac.in/wp-content/uploads/2023/10/R20CSE2202-OPERATING-SYSTEMS.pdf">OS CN-303</a></td>
+    <td><a href="https://www.researchgate.net/profile/Dk-Kaushik/publication/264005171_Digital_Electronics/links/53fca84a0cf2364ccc04b6dd/Digital-Electronics.pdf">DE</a><a href="https://www.scribd.com/document/861220940/Coa-Notes-4th-Semm-Computer-Organization-and-Architecture">CO CN-403</a></td>
+    <td><a href="https://www.vssut.ac.in/lecture_notes/lecture1428551142.pdf">SE CN-503</a></td>
   </tr>
   <tr>
-    <td><a href="https://www.scribd.com/document/803439751/c23-Engineering-Chemistry-Es-Material">Chemistry CM-104</a></td>
-    <td><a href="https://www.scribd.com/document/271896345/Data-Structures-With-c-Notes?utm_source=chatgpt.com">DS CM-304</a></td>
-    <td><a href="https://www.geeksforgeeks.org/java/java/">JAVA CM-404</a></td>
-    <td><a href="https://www.scribd.com/document/656818094/Iot-Notes-All-Units-PDF">IOT CM-504</a></td>
+    <td><a href="https://www.scribd.com/document/803439751/c23-Engineering-Chemistry-Es-Material">Chemistry CN-104</a></td>
+    <td><a href="https://igitsarang.ac.in/assets/documents/coursematerial/4th_etc_dccn_1702714591.pdf">DCCN CN-304</a></td>
+    <td><a href="https://www.geeksforgeeks.org/java/java/">JAVA CN-404</a></td>
+    <td><a href="https://www.scribd.com/document/656818094/Iot-Notes-All-Units-PDF">IOT CN-504</a></td>
   </tr>
   <tr>
-    <td><a href="https://freeallnotes.com/category/bce/?utm_source=">Basic Computer EngineeringCM-105</a></td>
-    <td><a href="https://www.tutorialspoint.com/dbms/index.htm?utm_source=chatgpt.com">DBMS CM-305</a></td>
-    <td><a href="https://www.scribd.com/document/722585628/CS-POLYTECHNIC-ENGINEERING-COMPUTER-NETWORKS-AND-SECURITY-SEMESTER-4-TEXT-BOOKS">CNCS CM-405</a></td>
-    <td><a href="https://www.scribd.com/document/750352891/Python-Programming-Sem-5">Python CM-505</a></td>
+    <td><a href="https://freeallnotes.com/category/bce/?utm_source=">Basic Computer Engineering CN-105</a></td>
+    <td><a href="https://www.tutorialspoint.com/dbms/index.htm?utm_source=chatgpt.com">DBMS CN-305</a></td>
+    <td><a href="https://gacbe.ac.in/images/E%20books/Cryptography%20and%20Network%20Security%20-%20Prins%20and%20Pract.%205th%20ed%20-%20W.%20Stallings%20(Pearson,%202011)%20BBSbb.pdf">CRYPTOGRAPHY CN-405</a></td>
+    <td><a href="https://www.scribd.com/document/899267273/High-Speed-Network">HSN CN-505</a></td>
   </tr>
   <tr>
-    <td><a href="https://vardhaman.org/wp-content/uploads/2021/03/CP.pdf?utm_source">C launguage CM-106</a></td>
-    <td colspan="4"><marquee><a href="https://stmarysguntur.com/wp-content/uploads/Computer-Engineering-C23.pdf">Click me to see c23 cme syllabus</a></marquee></td>
+    <td><a href="https://vardhaman.org/wp-content/uploads/2021/03/CP.pdf?utm_source">C launguage CN-106</a></td>
+    <td colspan="4"><marquee><a href="https://polytechnic.aec.edu.in/docs/syllabus/C_23/CCN.pdf">Click me to see c23 ccn syllabus</a></marquee></td>
   </tr>
 </table>
+</div>
+<marquee style="background-color: yellow;color: red;">If you want notes Click Any link</marquee>
+<div style="background-color: black;color: aliceblue;">
+  <p>Education is one of the most valuable treasures in human life. It is the process through which knowledge, skills, values, and habits are transmitted from one generation to another. It shapes our personality, guides our thoughts, and helps us to make the right decisions in life. Education is not limited to schools or universities but includes every form of learning that helps individuals to grow. From early childhood to old age, education acts as a lifelong companion that improves our quality of life and enables us to contribute positively to society.</p>
+  <p>The importance of education can be understood from the fact that it creates awareness. An educated person understands the difference between right and wrong, truth and falsehood, and progress and backwardness. Without education people may fall prey to ignorance, superstition, and social evils. With education one gains the power of reasoning, questioning, and logical thinking. This awareness is essential for building a just and civilized society where individuals respect one another and work together for common goals.</p>
+  <p>Education also plays a key role in providing employment opportunities. In the present world, most jobs require specific skills that can only be gained through education. Whether it is engineering, medicine, law, agriculture, or business, education prepares individuals to handle professional responsibilities. Even technical and vocational training is a part of education that equips people with practical knowledge to earn their livelihood. Thus, education is directly linked with economic growth. A country with educated citizens can build industries, develop technologies, and provide better living standards for its people.</p>
+  <p>Apart from economic benefits, education also builds character. It teaches values such as honesty, discipline, patience, tolerance, and respect for others. These values are important for personal growth as well as for maintaining harmony in society. An educated person is more likely to understand social responsibilities, follow rules, and contribute to the welfare of others. In this way, education not only shapes careers but also shapes personalities and strengthens the moral fabric of society.</p>
+  <p>One of the greatest advantages of education is empowerment. It empowers individuals to overcome difficulties and to face challenges with confidence. For example, when people know their legal rights they are less likely to be exploited. Women’s education in particular has proven to be transformative. Educated women can make better decisions for their families, participate in the workforce, and contribute to social development. Thus education is a powerful tool for achieving gender equality and social justice.</p>
+  <p>In addition to these, education encourages innovation and creativity. Every invention, discovery, and development in science or technology is the result of knowledge gained through education. From the wheel to the internet, human progress has been possible because of continuous learning and research. Today, when the world faces challenges such as climate change, poverty, and global health crises, education is the key that provides solutions. By educating young minds in research, technology, and problem solving, societies prepare themselves to build a sustainable future.</p>
+  <p>Moreover, education improves personal life. It builds self confidence, helps individuals express themselves clearly, and provides the ability to manage daily tasks efficiently. Educated parents can guide their children better, making families stronger and healthier. Education also creates awareness about health, hygiene, and nutrition, which leads to longer and happier lives. In short, education enriches not only professional life but also personal and social well being.</p>
+  <p>Education also promotes unity and peace. When people are educated, they understand diversity, respect other cultures, and communicate with tolerance. Misunderstandings and conflicts reduce when there is awareness and knowledge. History has shown that ignorance often leads to violence and division, while education builds bridges of friendship and cooperation. In a globalized world where people of different nations and backgrounds interact daily, education is the foundation for peaceful coexistence.</p>
+  <p>In conclusion, the importance of education cannot be overstated. It is the foundation of progress, the path to success, and the light that removes the darkness of ignorance. Education gives us knowledge, values, employment, empowerment, innovation, unity, and personal growth. It is the greatest investment that any individual or society can make. Every child and every adult has the right to be educated, and it is the responsibility of all to ensure that this right is fulfilled. A society that values education is a society that moves forward with wisdom and strength. By understanding the true importance of education, we can build a brighter, fairer, and more prosperous world for all.</p>
+</div>
+
 
 </body>
 </html>
