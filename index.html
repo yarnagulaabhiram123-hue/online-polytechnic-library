@@ -32,6 +32,7 @@
       margin: 8px 0;
       border: 1px solid #ccc;
       border-radius: 8px;
+      box-sizing: border-box;
     }
     button {
       width: 100%;
@@ -55,10 +56,9 @@
 
     <input type="text" id="signupName" placeholder="Name" required>
     <input type="email" id="signupEmail" placeholder="Email" required>
-    <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required minlength="6">
-    <input type="tel" id="signupPhone" placeholder="Phone Number (10 digits)" required pattern="[0-9]{10}">
-    <input type="text" id="signupPin" placeholder="PIN Number" required>
-
+    <input type="password" id="signupPassword" placeholder="Password" required>
+    <input type="tel" id="signupPhone" placeholder="Phone Number " required pattern="[0-9]{10}">
+    <input type="text" id="signupPin" placeholder="PIN " required>
 
     <!-- Branch Dropdown -->
     <select id="signupBranch" required>
@@ -103,15 +103,16 @@
       const errorEl = document.getElementById("error");
 
       try {
+        // Create user in Firebase Authentication
         const userCred = await createUserWithEmailAndPassword(auth, email, password);
 
-        // Store extra user info including branch
+        // Save additional user info in Firestore
         await setDoc(doc(db, "users", userCred.user.uid), {
           name, email, phone, pin, branch
         });
 
-        alert("Signup successful!");
-        window.location.href = "login.html";
+        alert("Signup successful! Redirecting to login...");
+        window.location.href = "login.html"; // Redirect to login page
 
       } catch (err) {
         console.error(err);
