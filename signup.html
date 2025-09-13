@@ -20,9 +20,9 @@
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
       width: 300px;
+      text-align: center;
     }
     h2 {
-      text-align: center;
       color: #333;
       margin-bottom: 20px;
     }
@@ -47,6 +47,14 @@
     }
     button:hover { opacity: 0.9; }
     #error { color: red; text-align: center; margin-top: 10px; }
+    .login-link {
+      margin-top: 15px;
+      display: block;
+      font-size: 0.9rem;
+      color: #333;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -57,8 +65,8 @@
     <input type="text" id="signupName" placeholder="Name" required>
     <input type="email" id="signupEmail" placeholder="Email" required>
     <input type="password" id="signupPassword" placeholder="Password" required>
-    <input type="tel" id="signupPhone" placeholder="Phone Number " required pattern="[0-9]{10}">
-    <input type="text" id="signupPin" placeholder="PIN " required>
+    <input type="tel" id="signupPhone" placeholder="Phone Number" required pattern="[0-9]{10}">
+    <input type="text" id="signupPin" placeholder="PIN" required>
 
     <!-- Branch Dropdown -->
     <select id="signupBranch" required>
@@ -67,20 +75,19 @@
       <option value="ECE">ECE</option>
       <option value="EEE">EEE</option>
       <option value="MECH">MECH</option>
-      <option value="AIML">AIML</option>
-      <option value="CIVIL">CIVIL</option>
-      <option value="CCN">CCN</option>
-
     </select>
 
     <button type="submit">Submit</button>
     <p id="error"></p>
+
+    <!-- Login link at the bottom -->
+    <span class="login-link" onclick="goToLogin()">Already have an account? Login</span>
   </form>
 
   <!-- Firebase JS -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
     import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
     const firebaseConfig = {
@@ -95,14 +102,6 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getFirestore(app);
-
-    // 🔹 Redirect if user is already signed in
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in, redirect to login.html
-        window.location.href = "login.html";
-      }
-    });
 
     // Signup form
     document.getElementById("signupForm").addEventListener("submit", async (e) => {
@@ -125,18 +124,18 @@
         });
 
         alert("Signup successful! Redirecting to login...");
-        window.location.href = "login.html";
+        window.location.href = "login.html"; // Redirect to login page
 
       } catch (err) {
         console.error(err);
-        if (err.code === "auth/email-already-in-use") {
-          // User already exists, redirect to login
-          window.location.href = "login.html";
-        } else {
-          errorEl.textContent = err.message;
-        }
+        errorEl.textContent = err.message;
       }
     });
+
+    // Function for login link
+    function goToLogin() {
+      window.location.href = "login.html"; // Redirect to login page
+    }
   </script>
 
 </body>
