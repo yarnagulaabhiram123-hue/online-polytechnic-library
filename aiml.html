@@ -1,14 +1,99 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<title>Artificial Intelligence</title>
 <style>
+/* ---------- Your CSS ---------- */
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: aliceblue;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Table styling */
 table, th, td {
-  border: 1px solid black;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Table header background */
+th {
+    background-color: #222;
+    color: aliceblue;
+}
+
+/* Links styling */
+a {
+    color: #ffd700;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Headings */
+h1 {
+    background-color: black;
+    color: aliceblue;
+    padding: 10px;
+    margin: 0;
+}
+
+/* Div containers for info */
+div.info, div.additional {
+    background-color: black;
+    color: aliceblue;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+/* Marquee styling */
+marquee {
+    background-color: black;
+    color: red;
+    padding: 5px;
+    font-weight: bold;
+}
+
+/* Scrollable table container */
+.table-container {
+    max-width: 100%;      /* restrict width to screen */
+    max-height: 400px;    /* adjust height as needed */
+    overflow-x: auto;     /* enable horizontal scroll */
+    overflow-y: auto;     /* enable vertical scroll */
+    border: 1px solid #444; /* optional border for container */
+    margin: 20px;          /* spacing around table */
 }
 </style>
-<title>Artificial Inteligence</title>
 </head>
 <body>
-<center><h1>Select Your Semester and your required notes</h1></center>
+
+<h1 style="text-align:center;">Select Your Semester and Required Notes</h1>
+
+<!-- Info above the table -->
+<div class="info">
+    <strong>Artificial Intelligence &amp; Machine Learning (AIML)</strong> is a rapidly
+    growing field that focuses on creating intelligent systems capable of learning,
+    adapting, and making decisions with minimal human intervention.
+    AI enables machines to perform tasks such as understanding natural language,
+    recognizing patterns, and problem-solving, while Machine Learning provides the
+    techniques for systems to learn from data and improve over time.
+    This course equips students with knowledge of programming, data handling,
+    neural networks, and real-world applications in areas like robotics, healthcare,
+    finance, and automation.
+</div>
+
+<!-- Scrollable Table -->
+<div class="table-container">
 <table style="width:100%">
   <tr>
     <th>Semester1</th>
@@ -25,7 +110,7 @@ table, th, td {
   <tr>
     <td><a href="https://www.slideshare.net/slideshow/m1-complete-notes/96392954">Maths CM-102</a></td>
     <td><a href="https://www.geeksforgeeks.org/java/java/">JAVA CM-302</a></td>
-    <td><a href="https://www.scribd.com/document/750352891/Python-Programming-Sem-5">python CM-402</a></td>
+    <td><a href="https://www.scribd.com/document/750352891/Python-Programming-Sem-5">Python CM-402</a></td>
     <td><a href="https://eecs.csuohio.edu/~sschung/cis612/CIS612_Lecture1_IntroBigDataAnalyricsCloud.pdf">BDCC CM-502</a></td>
   </tr>
   <tr>
@@ -36,7 +121,8 @@ table, th, td {
   </tr>
   <tr>
     <td><a href="https://www.scribd.com/document/803439751/c23-Engineering-Chemistry-Es-Material">Chemistry CM-104</a></td>
-    <td><a href="https://www.scribd.com/document/271896345/Data-Structures-With-c-Notes?utm_source=chatgpt.com">DE</a><a href="https://www.scribd.com/document/861220940/Coa-Notes-4th-Semm-Computer-Organization-and-Architecture">CO CM-304</a></td>
+    <td><a href="https://www.scribd.com/document/271896345/Data-Structures-With-c-Notes?utm_source=chatgpt.com">DE</a>
+        <a href="https://www.scribd.com/document/861220940/Coa-Notes-4th-Semm-Computer-Organization-and-Architecture">CO CM-304</a></td>
     <td><a href="https://www.vssut.ac.in/lecture_notes/lecture1428551142.pdf">SE CM-404</a></td>
     <td><a href="https://www.scribd.com/document/656818094/Iot-Notes-All-Units-PDF">IOT CM-504</a></td>
   </tr>
@@ -47,10 +133,28 @@ table, th, td {
     <td><a href="https://mrcet.com/downloads/digital_notes/CSE/III%20Year/AIML/Neural-Networks.pdf">ANNDL CM-505</a></td>
   </tr>
   <tr>
-    <td><a href="https://vardhaman.org/wp-content/uploads/2021/03/CP.pdf?utm_source">C launguage</a><a href="https://www.scribd.com/document/271896345/Data-Structures-With-c-Notes?utm_source=chatgpt.com">data structures CM-106</a></td>
-    <td colspan="3"><marquee style="background-color: bisque;color: orange;"><a href="https://stmarysguntur.com/wp-content/uploads/Artificial-Intelligence-AI-and-ML-C23.pdf">click me to see ai c23 syllabus sheet</a></marquee></td>
+    <td><a href="https://vardhaman.org/wp-content/uploads/2021/03/CP.pdf?utm_source">C language</a>
+        <a href="https://www.scribd.com/document/271896345/Data-Structures-With-c-Notes?utm_source=chatgpt.com">Data Structures CM-106</a></td>
+    <td colspan="3">
+      <marquee>
+        <a href="https://stmarysguntur.com/wp-content/uploads/Artificial-Intelligence-AI-and-ML-C23.pdf">
+          Click here to see AI C23 syllabus sheet
+        </a>
+      </marquee>
+    </td>
   </tr>
 </table>
+</div>
+
+<!-- Info below the table -->
+<div class="additional">
+    <b>Key Points of AIML Diploma:</b>
+    <ul>
+        <li>Builds strong foundations in Data Structures, DBMS, Operating Systems and Programming Languages.</li>
+        <li>Special focus on Artificial Intelligence (AI), Machine Learning (ML), Neural Networks and IoT.</li>
+        <li>Prepares students for careers in data science, robotics, automation, and advanced computing fields.</li>
+    </ul>
+</div>
 
 </body>
 </html>

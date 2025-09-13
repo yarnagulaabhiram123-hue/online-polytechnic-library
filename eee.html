@@ -11,6 +11,8 @@ body {
     background-color: #111;
     color: aliceblue;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 /* Table styling */
@@ -48,7 +50,7 @@ div.info, div.additional {
     background-color: black;
     color: aliceblue;
     padding: 15px;
-    margin-bottom: 20px;
+    margin: 20px;
     border-radius: 8px;
 }
 
@@ -59,40 +61,51 @@ marquee {
     padding: 5px;
     font-weight: bold;
 }
+
+/* Scrollable table container */
+.table-container {
+    max-width: 100%;      /* restrict width to screen */
+    max-height: 400px;    /* adjust height as needed */
+    overflow-x: auto;     /* enable horizontal scroll */
+    overflow-y: auto;     /* enable vertical scroll */
+    border: 1px solid #444; /* optional border for container */
+    margin: 20px;          /* spacing around table */
+}
 </style>
 </head>
 <body>
 
 <center><h1>Select Your Semester</h1></center>
 
-<!-- ⭐ EEE Matter ABOVE the table -->
 <div class="info">
     <h2>About Electrical & Electronics Engineering (EEE)</h2>
     <p>
- target="" Electrical & Electronics Engineering (EEE) is the branch of engineering that deals with the study,
- target="" design and application of electrical systems, electronics, and electromagnetism. 
- target="" It combines the principles of both electrical engineering and electronics engineering to develop 
- target="" solutions for modern power, automation, and communication technologies.
+        Electrical & Electronics Engineering (EEE) is the branch of engineering that deals with the study,
+        design and application of electrical systems, electronics, and electromagnetism.
+        It combines the principles of both electrical engineering and electronics engineering to develop
+        solutions for modern power, automation, and communication technologies.
     </p>
     <h3>Importance of EEE</h3>
     <ul>
- target="" <li><strong>Power Backbone:</strong> EEE is essential for generation, transmission and distribution of electrical power that drives industries, homes and cities.</li>
- target="" <li><strong>Industrial Growth:</strong> Electrical engineers design and maintain systems that power manufacturing and infrastructure.</li>
- target="" <li><strong>Technology Integration:</strong> EEE bridges classical electrical systems with modern electronics, enabling automation, robotics and smart devices.</li>
- target="" <li><strong>Renewable Energy:</strong> Plays a crucial role in developing solar, wind and other renewable energy technologies for a sustainable future.</li>
- target="" <li><strong>Innovation:</strong> From electric vehicles to IoT and smart grids, EEE engineers create the next generation of energy solutions.</li>
+        <li><strong>Power Backbone:</strong> EEE is essential for generation, transmission and distribution of electrical power that drives industries, homes and cities.</li>
+        <li><strong>Industrial Growth:</strong> Electrical engineers design and maintain systems that power manufacturing and infrastructure.</li>
+        <li><strong>Technology Integration:</strong> EEE bridges classical electrical systems with modern electronics, enabling automation, robotics and smart devices.</li>
+        <li><strong>Renewable Energy:</strong> Plays a crucial role in developing solar, wind and other renewable energy technologies for a sustainable future.</li>
+        <li><strong>Innovation:</strong> From electric vehicles to IoT and smart grids, EEE engineers create the next generation of energy solutions.</li>
     </ul>
 
     <h3>Key Points of EEE</h3>
     <ul>
- target="" <li>Design and analysis of electrical machines such as motors, generators and transformers.</li>
- target="" <li>Understanding power systems, power electronics and control systems.</li>
- target="" <li>Application of electronics in communication, embedded systems and automation.</li>
- target="" <li>Implementation of safety standards and efficient energy management practices.</li>
- target="" <li>Research and development in high-voltage engineering, renewable energy and smart grids.</li>
+        <li>Design and analysis of electrical machines such as motors, generators and transformers.</li>
+        <li>Understanding power systems, power electronics and control systems.</li>
+        <li>Application of electronics in communication, embedded systems and automation.</li>
+        <li>Implementation of safety standards and efficient energy management practices.</li>
+        <li>Research and development in high-voltage engineering, renewable energy and smart grids.</li>
     </ul>
 </div>
 
+<!-- Scrollable Table -->
+<div class="table-container">
 <table style="width:100%">
   <tr>
     <th>Semester1</th>
@@ -101,56 +114,57 @@ marquee {
     <th>Semester5</th>
   </tr>
   <tr>
-    <td><a href="https://www.academia.edu/34461488/ENGLISH_FOR_POLYTECHNICS_DIPLOMA_1ST_YEAR" >English EE-101</a></td>
+    <td><a href="https://www.academia.edu/34461488/ENGLISH_FOR_POLYTECHNICS_DIPLOMA_1ST_YEAR">English EE-101</a></td>
     <td><a href="https://www.scribd.com/document/752773156/Mathematics-Polytechnic-Engineering-mathematics-Semester-2-Text-Books">Maths(M2) EE-301</a></td>
-    <td><a href="https://gpnawarangpur.org/public/uploads/dept-study-material/6554b1db8b0de.pdf?utm_source=chatgpt.com">EI&E EE-401</a></td>
-    <td><a href="https://www.scribd.com/document/743513547/1-Industrial-Management-Smart-Technologies-IMST-NEW-14-12-2020?utm_source=chatgpt.com">IM & ST EE-501</a></td>
+    <td><a href="https://gpnawarangpur.org/public/uploads/dept-study-material/6554b1db8b0de.pdf">EI&E EE-401</a></td>
+    <td><a href="https://www.scribd.com/document/743513547/1-Industrial-Management-Smart-Technologies-IMST-NEW-14-12-2020">IM & ST EE-501</a></td>
   </tr>
   <tr>
     <td><a href="https://www.slideshare.net/slideshow/m1-complete-notes/96392954">Maths EE-102</a></td>
-    <td><a href="https://www.jbiet.edu.in/pdffls/EEE-Coursematerial/electrical-machines-1-notes.pdf?utm_source=chatgpt.com">EM-1 EE-302</a></td>
-    <td><a href="https://mrcet.com/downloads/digital_notes/EEE/Electrical%20Machines-II.pdf?utm_source=chatgpt.com">EM-2 EE-402</a></td>
-    <td><a href="https://www.iqytechnicalcollege.com/BAE%20685-Electric%20Vehicle%20Technology.pdf?utm_source=chatgpt.com">EVT EE-502</a></td>
+    <td><a href="https://www.jbiet.edu.in/pdffls/EEE-Coursematerial/electrical-machines-1-notes.pdf">EM-1 EE-302</a></td>
+    <td><a href="https://mrcet.com/downloads/digital_notes/EEE/Electrical%20Machines-II.pdf">EM-2 EE-402</a></td>
+    <td><a href="https://www.iqytechnicalcollege.com/BAE%20685-Electric%20Vehicle%20Technology.pdf">EVT EE-502</a></td>
   </tr>
   <tr>
     <td><a href="https://www.slideshare.net/slideshow/first-semester-diploma-engineering-physics-i/55070671">Physics EE-103</a></td>
-    <td><a href="https://www.ltrc.lsu.edu/pdf/STT203-Transformers-ACCircuits.pdf?utm_source=chatgpt.com">A.C circuits & transformers EE-303</a></td>
-    <td><a href="https://kanchiuniv.ac.in/wp-content/uploads/2022/02/POWER-SYSTEMS.pdf?utm_source=chatgpt.com">Power Systems 1 EE-403</a></td>
+    <td><a href="https://www.ltrc.lsu.edu/pdf/STT203-Transformers-ACCircuits.pdf">A.C circuits & transformers EE-303</a></td>
+    <td><a href="https://kanchiuniv.ac.in/wp-content/uploads/2022/02/POWER-SYSTEMS.pdf">Power Systems 1 EE-403</a></td>
     <td><a href="https://www.scribd.com/document/741535658/Power-System-2-Complete-Notes">Power Systems 2 EE-503</a></td>
   </tr>
   <tr>
     <td><a href="https://www.scribd.com/document/803439751/c23-Engineering-Chemistry-Es-Material">Chemistry EE-104</a></td>
-    <td><a href="https://cvrp.edu.in/wp-content/uploads/2024/06/FUNDAMENTALS-OF-ELECTRONICS-ENGINEERING_S.PATRA-_1ST-YEAR.pdf?utm_source=chatgpt.com">Electronics Engg EE-304</a></td>
-    <td><a href="https://www.scribd.com/document/430141437/Power-Electronics-Notes-for-Diploma-Electrical-Engineering?utm_source=chatgpt.com">PE & PLC  EE-404</a></td>
-    <td><a href="https://www.govtpolytechnicbargarh.in/UserImg/6_20_1_55_36_9_28_0_0_40_5th%20Electrical%20DE%26MP.pdf?utm_source=chatgpt.com">DE & MC EE-504</a></td>
+    <td><a href="https://cvrp.edu.in/wp-content/uploads/2024/06/FUNDAMENTALS-OF-ELECTRONICS-ENGINEERING_S.PATRA-_1ST-YEAR.pdf">Electronics Engg EE-304</a></td>
+    <td><a href="https://www.scribd.com/document/430141437/Power-Electronics-Notes-for-Diploma-Electrical-Engineering">PE & PLC  EE-404</a></td>
+    <td><a href="https://www.govtpolytechnicbargarh.in/UserImg/6_20_1_55_36_9_28_0_0_40_5th%20Electrical%20DE%26MP.pdf">DE & MC EE-504</a>
+        <a href="https://sripc.edu.in/data/uploads/eee/Notes/5%20Sem/5%20MC.pdf?utm_source=chatgpt.com">DE & MC EE-504</a></td>
   </tr>
   <tr>
-    <td><a href="http://vssut.ac.in/lecture_notes/lecture1426861925.pdf?utm_source=chatgpt.com">EEM EE-105</a></td>
-    <td><a href="https://www.slideshare.net/slideshow/c-notes-diplomaee3rdsem/238822392?utm_source=chatgpt.com">EE-305</a></td>
-    <td><a href="https://vemu.org/uploads/lecture_notes/03_01_2020_65460003.pdf?utm_source=chatgpt.com">GME EE-405</a></td>
-    <td><a href="https://ganeshpolytechnic.edu.in/images/upload/documents/120259293UEET.PDF.5TH%20SEM.pdf?utm_source=chatgpt.com">EU & T EE-505</a></td>
+    <td><a href="http://vssut.ac.in/lecture_notes/lecture1426861925.pdf">EEM EE-105</a></td>
+    <td><a href="https://www.slideshare.net/slideshow/c-notes-diplomaee3rdsem/238822392">EE-305</a></td>
+    <td><a href="https://vemu.org/uploads/lecture_notes/03_01_2020_65460003.pdf">GME EE-405</a></td>
+    <td><a href="https://ganeshpolytechnic.edu.in/images/upload/documents/120259293UEET.PDF.5TH%20SEM.pdf">EU & T EE-505</a></td>
   </tr>
   <tr>
-    <td><a href="https://mrcet.com/downloads/digital_notes/HS/Basic%20Electrical%20Engineering%20R-20.pdf?utm_source=chatgpt.com">BET EE-106</a></td>
+    <td><a href="https://mrcet.com/downloads/digital_notes/HS/Basic%20Electrical%20Engineering%20R-20.pdf">BET EE-106</a></td>
     <td colspan="4"><marquee><a href="https://stmarysguntur.com/wp-content/uploads/Computer-Engineering-C23.pdf">Click me to see C23 EEE syllabus</a></marquee></td>
   </tr>
 </table>
+</div>
 
-<!-- ⭐ EEE Matter BELOW the table -->
 <div class="additional">
     <h2>Career Opportunities</h2>
     <p>
- target="" After completing the C23 Diploma in EEE, students can pursue careers as electrical engineers,
- target="" power system engineers, maintenance engineers, or electronics design engineers. 
- target="" They can work in power generation plants, renewable energy companies, manufacturing industries,
- target="" or continue higher education in Electrical, Electronics or related fields.
+        After completing the C23 Diploma in EEE, students can pursue careers as electrical engineers,
+        power system engineers, maintenance engineers, or electronics design engineers.
+        They can work in power generation plants, renewable energy companies, manufacturing industries,
+        or continue higher education in Electrical, Electronics or related fields.
     </p>
 
     <h3>Future Scope</h3>
     <p>
- target="" The demand for skilled EEE professionals is increasing rapidly with the growth of smart grids,
- target="" electric vehicles, and sustainable energy solutions. Knowledge of both electrical systems and
- target="" electronics makes EEE graduates versatile and highly employable in both core and IT industries.
+        The demand for skilled EEE professionals is increasing rapidly with the growth of smart grids,
+        electric vehicles, and sustainable energy solutions. Knowledge of both electrical systems and
+        electronics makes EEE graduates versatile and highly employable in both core and IT industries.
     </p>
 </div>
 

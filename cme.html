@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>CME – Computer Engineering Notes</title>
 <style>
 /* General body styling */
 body {
@@ -7,6 +10,8 @@ body {
     background-color: #111;
     color: aliceblue;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 /* Table styling */
@@ -44,7 +49,7 @@ div.info, div.additional {
     background-color: black;
     color: aliceblue;
     padding: 15px;
-    margin-bottom: 20px;
+    margin: 20px;
     border-radius: 8px;
 }
 
@@ -55,25 +60,34 @@ marquee {
     padding: 5px;
     font-weight: bold;
 }
+
+/* Scrollable table container */
+.table-container {
+    max-width: 100%;      /* restrict width to screen */
+    max-height: 400px;    /* adjust height as needed */
+    overflow-x: auto;     /* enable horizontal scroll */
+    overflow-y: auto;     /* enable vertical scroll */
+    border: 1px solid #444; /* optional border for container */
+    margin: 20px;          /* spacing around table */
+}
 </style>
 </head>
 <body>
-<center><h1 style="background-color: black;color: aliceblue;">Select Your required notes</h1></center>
-<div style="background-color: black;color: aliceblue;">
+
+<center><h1>Select Your Required Notes</h1></center>
+
+<div class="info">
 <hr>
-<p>CME (Computer Engineering) is a branch of diploma/engineering studies that focuses on:
+<p>CME (Computer Engineering) is a branch of diploma/engineering studies that focuses on:</p>
+<p><b>Core areas of computing:</b> Computer programming (C, C++, Python, Java), Data Structures, Operating Systems, DBMS, Networking.</p>
+<p><b>Hardware basics:</b> Digital electronics, microprocessors, computer organization.</p>
+<p><b>Practical skills:</b> Software development, web development, database handling, troubleshooting, and basic networking.</p>
+<p><b>Projects & labs:</b> Students build applications, small software systems, and sometimes hardware–software integrated projects.</p>
+<p><b>Career paths:</b> Software developer, web developer, system admin, network technician, IT support, and with higher studies — software engineer, data analyst, AI/ML engineer, etc.</p>
+<p>In diploma, CME = Computer Engineering branch (sometimes called CSE in degree level). It’s one of the most in-demand fields because of IT industry growth.</p>
+<hr>
+</div>
 
-Core areas of computing: Computer programming (C, C++, Python, Java), Data Structures, Operating Systems, DBMS, Networking.
-
-Hardware basics: Digital electronics, microprocessors, computer organization.
-
-Practical skills: Software development, web development, database handling, troubleshooting, and basic networking.
-
-Projects & labs: Students build applications, small software systems, and sometimes hardware–software integrated projects.
-
-Career paths: Software developer, web developer, system admin, network technician, IT support, and with higher studies — software engineer, data analyst, AI/ML engineer, etc.
-
-In diploma, CME = Computer Engineering branch (sometimes called CSE in degree level). It’s one of the most in-demand fields because of IT industry growth.</p><hr></div>
 <img src="data:image/png;base64,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" width="100%" height="50%">
 <div style="background-color:black;color:aliceblue;">
 <p>Foundation for IT Industry – CME provides the basic knowledge of programming, databases, and networking, which are the backbone of the IT sector.</p>
@@ -92,6 +106,8 @@ In diploma, CME = Computer Engineering branch (sometimes called CSE in degree le
 <p>In conclusion Computer Science and Engineering is a vital branch of education that combines technical knowledge with practical skills. It opens doors to employment in various sectors and provides opportunities for higher studies and research. The demand for computer engineers will continue to rise as the world becomes more digital. A diploma or degree in CSE not only gives career opportunities but also develops logical thinking, problem solving ability, and creativity. Choosing CSE as a field of study is a wise decision for students who want to build a strong future in the world of technology.</p>
 </div>
 
+
+<div class="table-container">
 <table style="width:100%">
   <tr>
     <th>Semester1</th>
@@ -134,9 +150,11 @@ In diploma, CME = Computer Engineering branch (sometimes called CSE in degree le
     <td colspan="4"><marquee><a href="https://stmarysguntur.com/wp-content/uploads/Computer-Engineering-C23.pdf">Click me to see c23 cme syllabus</a></marquee></td>
   </tr>
 </table>
-<marquee>If you want notes Click Any link</marquee>
+</div>
+
+<marquee style="background-color: yellow;color: red;">If you want notes Click Any link</marquee>
 <div style="background-color: black;color: aliceblue;">
- <p>Education is one of the most valuable treasures in human life. It is the process through which knowledge, skills, values, and habits are transmitted from one generation to another. It shapes our personality, guides our thoughts, and helps us to make the right decisions in life. Education is not limited to schools or universities but includes every form of learning that helps individuals to grow. From early childhood to old age, education acts as a lifelong companion that improves our quality of life and enables us to contribute positively to society.</p>
+  <p>Education is one of the most valuable treasures in human life. It is the process through which knowledge, skills, values, and habits are transmitted from one generation to another. It shapes our personality, guides our thoughts, and helps us to make the right decisions in life. Education is not limited to schools or universities but includes every form of learning that helps individuals to grow. From early childhood to old age, education acts as a lifelong companion that improves our quality of life and enables us to contribute positively to society.</p>
   <p>The importance of education can be understood from the fact that it creates awareness. An educated person understands the difference between right and wrong, truth and falsehood, and progress and backwardness. Without education people may fall prey to ignorance, superstition, and social evils. With education one gains the power of reasoning, questioning, and logical thinking. This awareness is essential for building a just and civilized society where individuals respect one another and work together for common goals.</p>
   <p>Education also plays a key role in providing employment opportunities. In the present world, most jobs require specific skills that can only be gained through education. Whether it is engineering, medicine, law, agriculture, or business, education prepares individuals to handle professional responsibilities. Even technical and vocational training is a part of education that equips people with practical knowledge to earn their livelihood. Thus, education is directly linked with economic growth. A country with educated citizens can build industries, develop technologies, and provide better living standards for its people.</p>
   <p>Apart from economic benefits, education also builds character. It teaches values such as honesty, discipline, patience, tolerance, and respect for others. These values are important for personal growth as well as for maintaining harmony in society. An educated person is more likely to understand social responsibilities, follow rules, and contribute to the welfare of others. In this way, education not only shapes careers but also shapes personalities and strengthens the moral fabric of society.</p>
@@ -145,7 +163,8 @@ In diploma, CME = Computer Engineering branch (sometimes called CSE in degree le
   <p>Moreover, education improves personal life. It builds self confidence, helps individuals express themselves clearly, and provides the ability to manage daily tasks efficiently. Educated parents can guide their children better, making families stronger and healthier. Education also creates awareness about health, hygiene, and nutrition, which leads to longer and happier lives. In short, education enriches not only professional life but also personal and social well being.</p>
   <p>Education also promotes unity and peace. When people are educated, they understand diversity, respect other cultures, and communicate with tolerance. Misunderstandings and conflicts reduce when there is awareness and knowledge. History has shown that ignorance often leads to violence and division, while education builds bridges of friendship and cooperation. In a globalized world where people of different nations and backgrounds interact daily, education is the foundation for peaceful coexistence.</p>
   <p>In conclusion, the importance of education cannot be overstated. It is the foundation of progress, the path to success, and the light that removes the darkness of ignorance. Education gives us knowledge, values, employment, empowerment, innovation, unity, and personal growth. It is the greatest investment that any individual or society can make. Every child and every adult has the right to be educated, and it is the responsibility of all to ensure that this right is fulfilled. A society that values education is a society that moves forward with wisdom and strength. By understanding the true importance of education, we can build a brighter, fairer, and more prosperous world for all.</p>
-
 </div>
+
+
 </body>
 </html>

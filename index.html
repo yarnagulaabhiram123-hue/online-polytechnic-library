@@ -67,6 +67,10 @@
       <option value="ECE">ECE</option>
       <option value="EEE">EEE</option>
       <option value="MECH">MECH</option>
+      <option value="AIML">AIML</option>
+      <option value="CIVIL">CIVIL</option>
+      <option value="CCN">CCN</option>
+
     </select>
 
     <button type="submit">Submit</button>
@@ -76,7 +80,7 @@
   <!-- Firebase JS -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
     import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
     const firebaseConfig = {
@@ -92,6 +96,15 @@
     const auth = getAuth(app);
     const db = getFirestore(app);
 
+    // 🔹 Redirect if user is already signed in
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, redirect to login.html
+        window.location.href = "login.html";
+      }
+    });
+
+    // Signup form
     document.getElementById("signupForm").addEventListener("submit", async (e) => {
       e.preventDefault();
       const name = document.getElementById("signupName").value.trim();
@@ -112,11 +125,16 @@
         });
 
         alert("Signup successful! Redirecting to login...");
-        window.location.href = "login.html"; // Redirect to login page
+        window.location.href = "login.html";
 
       } catch (err) {
         console.error(err);
-        errorEl.textContent = err.message;
+        if (err.code === "auth/email-already-in-use") {
+          // User already exists, redirect to login
+          window.location.href = "login.html";
+        } else {
+          errorEl.textContent = err.message;
+        }
       }
     });
   </script>
