@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Polytechnic Library - Login</title>
   <style>
     body {
@@ -21,20 +22,9 @@
       width: 350px;
       text-align: center;
     }
-    .form-container h2 {
-      margin-bottom: 20px;
-      color: #333;
-    }
-    .input-group {
-      margin-bottom: 15px;
-      text-align: left;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #444;
-    }
+    .form-container h2 { margin-bottom: 20px; color: #333; }
+    .input-group { margin-bottom: 15px; text-align: left; }
+    label { display: block; margin-bottom: 5px; font-weight: bold; color: #444; }
     input, select {
       width: 100%;
       padding: 10px;
@@ -43,74 +33,92 @@
       font-size: 14px;
       transition: 0.3s;
     }
-    input:focus, select:focus {
-      border-color: #2575fc;
-      outline: none;
-      box-shadow: 0 0 5px rgba(37,117,252,0.5);
-    }
-    .btn {
-      width: 100%;
-      padding: 12px;
-      background: #2575fc;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #1a5ed3;
-    }
-    .note {
-      margin-top: 15px;
-      font-size: 12px;
-      color: #666;
-    }
+    input:focus, select:focus { border-color: #2575fc; outline: none; box-shadow: 0 0 5px rgba(37,117,252,0.5); }
+    .btn { width: 100%; padding: 12px; background: #2575fc; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    .btn:hover { background: #1a5ed3; }
+    .note { margin-top: 15px; font-size: 12px; color: #666; }
+    #error { color: red; text-align: center; margin-top: 10px; }
   </style>
 </head>
 <body>
+
   <div class="form-container">
-    <h2>Polytechnic Library Login</h2>
-    <form onsubmit="alert('Login Successful!'); return false;">
-      
-      <!-- Name -->
+    <h2>Polytechnic Library - Login</h2>
+    <form id="loginForm">
       <div class="input-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
       </div>
-      
-      <!-- Number -->
       <div class="input-group">
-        <label for="number">Mobile Number</label>
-        <input type="tel" id="number" name="number" placeholder="Enter 10-digit number" 
-               pattern="[0-9]{10}" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password" required>
       </div>
-      
-      <!-- Branch -->
       <div class="input-group">
-        <label for="branch">Branch</label>
-        <select id="branch" name="branch" required>
+        <label for="loginBranch">Branch</label>
+        <select id="loginBranch" required>
           <option value="">-- Select Branch --</option>
-          <option value="CSE">Computer Science (CSE)</option>
-          <option value="ECE">Electronics & Communication (ECE)</option>
-          <option value="EEE">Electrical & Electronics (EEE)</option>
-          <option value="MECH">Mechanical (MECH)</option>
-          <option value="CIVIL">Civil Engineering</option>
-          <option value="AIML">Artificial inteligence and Machine learning (AIML)</option>
-          <option value="CCN">Communication and computer Engineering (CCN)</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="EEE">EEE</option>
+          <option value="MECH">MECH</option>
         </select>
       </div>
-      
-      <!-- Submit Button -->
-      <button type="submit" class="btn">
-  <a href="main.html" style="color:white; text-decoration:none; display:block;">Submit</a>
-</button>
-
-      
+      <button type="submit" class="btn">Login</button>
+      <p id="error"></p>
     </form>
-    <p class="note">Please fill all fields correctly before submitting.</p>
+    <p class="note">Don’t have an account? <a href="index.html">Sign Up</a></p>
   </div>
+
+  <!-- Firebase JS -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCEiuOj724mU5FxpwDM2ZYdcRlp3nHqkVA",
+      authDomain: "online-polytechnic-library.firebaseapp.com",
+      projectId: "online-polytechnic-library",
+      storageBucket: "online-polytechnic-library.firebasestorage.app",
+      messagingSenderId: "127539395582",
+      appId: "1:127539395582:web:31612cc3f67ab1ee71deaf"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const loginForm = document.getElementById("loginForm");
+    const errorEl = document.getElementById("error");
+
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const branch = document.getElementById("loginBranch").value;
+
+      try {
+        const userCred = await signInWithEmailAndPassword(auth, email, password);
+
+        // Get user info from Firestore
+        const userDoc = await getDoc(doc(db, "users", userCred.user.uid));
+        if (userDoc.exists()) {
+          const userData = userDoc.data();
+
+          // Optional: check if branch matches the signup branch
+          if (userData.branch !== branch) {
+            alert(`Warning: selected branch does not match your signup branch (${userData.branch})`);
+          }
+        }
+
+        alert("Login successful!");
+        window.location.href = "main.html";
+      } catch (err) {
+        console.error(err);
+        errorEl.textContent = err.message;
+      }
+    });
+  </script>
+
 </body>
 </html>
